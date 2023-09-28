@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrega Imagens</title>
+</head>
+<body>
+
+    <div id="container"></div>
+
+    <script>
+        var imagens = [
+            'https://images.pexels.com/photos/15591206/pexels-photo-15591206/free-photo-of-banho-banheira-bolha-borbulha.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            'https://images.pexels.com/photos/18397478/pexels-photo-18397478/free-photo-of-automotivo-automotor-automobilistico-carro.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            'https://images.pexels.com/photos/15261266/pexels-photo-15261266/free-photo-of-iluminado-luminoso-elevador-carona.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            'https://images.pexels.com/photos/18331926/pexels-photo-18331926/free-photo-of-aventura-facanha-alpes-praia.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            'https://images.pexels.com/photos/18071154/pexels-photo-18071154/free-photo-of-alpinista-escalada-determinacao-esforco.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            'https://images.pexels.com/photos/18061788/pexels-photo-18061788/free-photo-of-america-arquitetura-construcao-predio.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            'https://images.pexels.com/photos/17505018/pexels-photo-17505018/free-photo-of-banheira-cidade-meio-urbano-trevas.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            'https://images.pexels.com/photos/17492049/pexels-photo-17492049/free-photo-of-trevas-escuridao-interior-sala.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            'https://images.pexels.com/photos/15971519/pexels-photo-15971519/free-photo-of-filiais-setores-galhos-ramos.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            'https://images.pexels.com/photos/10481402/pexels-photo-10481402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            'https://images.pexels.com/photos/18400039/pexels-photo-18400039/free-photo-of-retroiluminado-iluminado-por-tras-sombrio-escuro.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            'https://images.pexels.com/photos/17968667/pexels-photo-17968667/free-photo-of-preto-e-branco-p-b-cidade-meio-urbano.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            'https://images.pexels.com/photos/7555343/pexels-photo-7555343.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            'https://images.pexels.com/photos/12397022/pexels-photo-12397022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            'https://images.pexels.com/photos/13984620/pexels-photo-13984620.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+        ];
+        var container = document.getElementById('container');
+
+        function randomImg() {
+            var index = Math.floor(Math.random() * imagens.length);
+            return imagens[index];
+        }
+
+        function createImg() {
+            var img = document.createElement('img');
+            img.src = randomImg();
+            container.appendChild(img);
+        }
+
+        function createImgs() {
+            for (var i = 0; i < 10; i++) {
+                createImg();
+            }
+        }
+        createImgs();
+
+        window.onscroll = function() {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                createImgs();
+            }
+        };
+        
+    </script>
+</body>
+</html>
